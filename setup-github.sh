@@ -39,7 +39,7 @@ echo "Creating repository 'trustgraph-fixes' on GitHub..."
 gh repo create trustgraph-fixes \
     --public \
     --description "Fixes and improvements for TrustGraph - Pulsar serialization issue with list[list[float]] fields" \
-    --source=~/ZCodeProject/trustgraph-fixes \
+    --source="$HOME/ZCodeProject/trustgraph-fixes" \
     --push
 
 echo ""
@@ -50,7 +50,7 @@ echo ""
 echo "Repository URL: https://github.com/$GITHUB_USER/trustgraph-fixes"
 echo ""
 echo "Quick apply fix to running container:"
-echo "  docker cp ~/ZCodeProject/trustgraph-fixes/trustgraph-flow/trustgraph/storage/doc_embeddings/qdrant/write.py \\"
+echo "  docker cp \$HOME/ZCodeProject/trustgraph-fixes/trustgraph-flow/trustgraph/storage/doc_embeddings/qdrant/write.py \\"
 echo "    deploy-store-doc-embeddings-1:/usr/local/lib/python3.13/site-packages/trustgraph/storage/doc_embeddings/qdrant/write.py"
 echo "  docker restart deploy-store-doc-embeddings-1"
 echo ""
